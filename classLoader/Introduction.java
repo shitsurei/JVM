@@ -29,14 +29,32 @@ public class Introduction {
     public static void main(String[] args) {
 //        被动引用演示
 //        执行该语句时子类未进行初始化
-//        System.out.println(Child.STR);
+        System.out.println(Child1.STR);
 //        执行该语句时父类未进行初始化(因为在上面的语句中已经初始化过)
-        System.out.println(Child.STR2);
+//        System.out.println(Child.STR2);
 //        被动引用:1.访问父类的静态变量
     }
 }
 
-class Parent {
+/**
+ * JVM参数：-XX:+TraceClassLoading
+ * 用于输出类加载信息
+ *
+ * 首先加载了Object根类
+ * [Loaded java.lang.Object from C:\Program Files\Java\jdk1.8.0_201\jre\lib\rt.jar]
+ * ……
+ * 加载main方法所在类
+ * [Loaded classLoader.Introduction from file:/C:/workspace/JVM/out/production/JVM/]
+ * ……
+ * [Loaded classLoader.Parent from file:/C:/workspace/JVM/out/production/JVM/]
+ * Child类虽然没有初始化，但是也加载了
+ * [Loaded classLoader.Child from file:/C:/workspace/JVM/out/production/JVM/]
+ * 输出信息
+ * Parent static block
+ * hello world
+ */
+
+class Parent1 {
     public static String STR = "hello world";
 //类初始化时会执行类中的静态代码块
     static {
@@ -44,7 +62,7 @@ class Parent {
     }
 }
 
-class Child extends Parent {
+class Child1 extends Parent1 {
     public static String STR2 = "hello Java";
 
     static {
