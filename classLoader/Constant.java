@@ -21,7 +21,7 @@ package classLoader;
  *        0: getstatic     #2                  // Field java/lang/System.out:Ljava/io/PrintStream;  访问out对象（静态常量）
  *        【ldc助记符表示将int，float或string类型的常量值从常量池中推送到栈顶】
  *        【类似的助记符有bipush，表示将单字节（-128~127）的常量（short）推送至栈顶】
- *        【类似的助记符有sipush，表示将短整型（-128~127）的常量（int）推送至栈顶】
+ *        【类似的助记符有sipush，表示将短整型（-32768~32767）的常量（int）推送至栈顶】
  *        【类似的助记符有iconst_m1，表示将int类型的数字-1推送至栈顶】
  *        【类似的助记符有iconst_0，表示将int类型的数字0推送至栈顶】
  *        【类似的助记符有iconst_1，表示将int类型的数字1推送至栈顶】
