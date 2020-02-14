@@ -22,10 +22,12 @@ package classLoader;
  *        【ldc助记符表示将int，float或string类型的常量值从常量池中推送到栈顶】
  *        【类似的助记符有bipush，表示将单字节（-128~127）的常量（short）推送至栈顶】
  *        【类似的助记符有sipush，表示将短整型（-128~127）的常量（int）推送至栈顶】
+ *        【类似的助记符有iconst_m1，表示将int类型的数字-1推送至栈顶】
+ *        【类似的助记符有iconst_0，表示将int类型的数字0推送至栈顶】
  *        【类似的助记符有iconst_1，表示将int类型的数字1推送至栈顶】
  *        【类似的助记符有iconst_2，表示将int类型的数字2推送至栈顶】
  *        【类似的助记符有iconst_3，表示将int类型的数字3推送至栈顶】
- *        ……最多到5
+ *        ……最多到5，一共7个特殊的助记符
  *        3: ldc           #4                  // String hello world    已经将常量放入常量池
  *        5: invokevirtual #5                  // Method java/io/PrintStream.println:(Ljava/lang/String;)V
  *        8: return
@@ -34,7 +36,7 @@ package classLoader;
  */
 public class Constant {
     public static void main(String[] args) {
-        System.out.println(Child2.STR);
+        System.out.println(Parent2.STR);
     }
 }
 class Parent2 {
@@ -43,13 +45,5 @@ class Parent2 {
     //类初始化时会执行类中的静态代码块
     static {
         System.out.println("Parent static block");
-    }
-}
-
-class Child2 extends Parent2 {
-    public static String STR2 = "hello Java";
-
-    static {
-        System.out.println("Child static block");
     }
 }
