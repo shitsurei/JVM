@@ -27,8 +27,10 @@ public class CLoader {
 //        只初始化Child类，输出静态代码块内容和a的值
 //        new Child6();
 //        输出静态代码块和实例化块
-        System.out.println(Child6.b);
+//        System.out.println(Child6.b);
 //        只初始化接口，输出Parent6 invoked和b的值
+        System.out.println(Child7.c);
+//        只初始化子接口，输出Child7 invoked和c的值
     }
 }
 
@@ -47,9 +49,19 @@ class Child6 implements Parent6 {
     static {
         System.out.println("静态代码块");
     }
+
     {
         System.out.println("实例化块");
     }
 
     public static int a = 1;
+}
+
+interface Child7 extends Parent6 {
+    int c = new Random().nextInt(5);
+    Thread THREAD = new Thread() {
+        {
+            System.out.println("Child7 invoked");
+        }
+    };
 }
