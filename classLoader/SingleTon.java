@@ -1,6 +1,7 @@
 package classLoader;
 
 /**
+ * 05
  * 这个案例用于区分父子类和父子接口
  */
 public class SingleTon {

@@ -3,6 +3,7 @@ package classLoader;
 import java.util.Random;
 
 /**
+ * 04
  * 通过实验发现接口中的变量也会在编译阶段存入调用类的常量池中，不涉及该接口的主动使用，子接口没有被初始化因此该接口的父类也不会进行初始化
  */
 public class Interface {
