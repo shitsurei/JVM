@@ -72,7 +72,7 @@ public class DefineClassLoader extends ClassLoader {
         InputStream is = null;
         byte[] data = null;
         ByteOutputStream bops = null;
-        className = className.replace(".", "/");
+        className = className.replace(".", "\\");
         try {
             is = new FileInputStream(new File(this.path + className + this.fileExtension));
             bops = new ByteOutputStream();
