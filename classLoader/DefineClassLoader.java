@@ -52,6 +52,9 @@ public class DefineClassLoader extends ClassLoader {
      */
     @Override
     protected Class<?> findClass(String name) throws ClassNotFoundException {
+        System.out.println("通过自定义类加载器加载");
+        System.out.println("加载的类：" + name);
+        System.out.println("类加载器名：" + this.classLoaderName);
         byte[] data = this.loadClassData(name);
 //        将字节数组转化为一个Class类的实例
         return this.defineClass(name, data, 0, data.length);
