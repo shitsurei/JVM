@@ -32,6 +32,11 @@ public class DefineClassLoader extends ClassLoader {
         this.classLoaderName = classLoaderName;
     }
 
+    //    该方法用于指定该类为系统类加载器时，系统自动调用这个构造方法将原系统类加载器作为该类双亲，该类成为新的系统类加载器
+    public DefineClassLoader(ClassLoader parent) {
+        super(parent);
+    }
+
     public DefineClassLoader(ClassLoader parent, String classLoaderName) {
         //    使用指定的类加载器作为双亲
         super(parent);

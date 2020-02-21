@@ -32,6 +32,7 @@ public class OtherClassLoader {
 //        jdk1.8.0_201\jre\classes
         System.out.println(System.getProperty("sun.boot.class.path"));
 //        扩展类加载器
+//        注意：扩展类加载器只能从jar包中加载类，不能直接加载所属路径下的class文件
 //        jdk1.8.0_201\jre\lib\ext
 //        C:\WINDOWS\Sun\Java\lib\ext
         System.out.println(System.getProperty("java.ext.dirs"));
