@@ -5,8 +5,10 @@ package classCode;
  * 复杂字节码分析
  */
 public class PracticeCase {
+//    成员变量的赋值是在构造方法中完成的，且多个构造方法的情况下每个构造方法都会编译成员变量初始化的字节码
     String str = "welcome";
     private int x = 5;
+//    静态变量的初始化是在<clinit>静态方法中完成的，且静态代码块中的操作也会合并进去（按顺序）
     public static Integer y = 10;
 
     public static void main(String[] args) {
