@@ -66,6 +66,9 @@ package gc;
  * 4 Serial Old收集器：
  * 算法：单线程收集器，使用标记-整理算法，是老年代的收集器
  * 5 Parallel Old收集器：JDK1.6提供，采用多线程，老年代版本吞吐量优先收集器
+ * 6 CMS（Concurrent Mark Sweep）收集器：以最短停顿时间为目标【适合web应用】的收集器
+ *  算法：只针对老年代，一般结合ParNew使用；GC线程和用户线程并发工作，在多核环境下才有意义；使用标记清除算法
+ *  启动参数：-XX:+UseConcMarkSweepGC
  */
 public class Introduction {
     public static void main(String[] args) {
